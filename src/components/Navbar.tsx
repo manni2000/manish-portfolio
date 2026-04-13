@@ -25,11 +25,11 @@ const Navbar = () => {
         scrolled ? "glass-card border-b border-border/50 py-3" : "py-5"
       }`}
     >
-      <div className="container max-w-6xl mx-auto flex items-center px-4 md:px-6">
+      <div className="container max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6">
         <a href="#" className="font-mono text-sm font-semibold text-primary tracking-wider">
           &lt;/&gt;
         </a>
-        <div className="hidden md:flex flex-1 items-center justify-center gap-6 md:gap-8">
+        <div className="hidden md:flex items-center gap-6 md:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
