@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, ExternalLink, Mail } from "lucide-react";
 
 const terminalLines = [
   "$ initializing system...",
@@ -35,27 +35,18 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center section-padding pt-32 relative overflow-hidden">
+    <section className="min-h-screen flex items-center section-padding pt-24 md:pt-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)/0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary)/0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 -right-32 w-64 h-64 md:w-96 md:h-96 bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 -left-32 w-64 h-64 md:w-96 md:h-96 bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
-          className="space-y-8"
+          className="space-y-8 text-center sm:text-left items-center sm:items-start"
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs font-mono text-primary">Available for opportunities</span>
-          </motion.div>
 
           <div className="space-y-4">
             <motion.p
@@ -67,7 +58,7 @@ const HeroSection = () => {
               Hi, I'm Manish Kumar
             </motion.p>
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -77,7 +68,7 @@ const HeroSection = () => {
               systems where AI, scale, and performance converge.
             </motion.h1>
             <motion.p
-              className="text-lg text-muted-foreground max-w-lg leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -87,20 +78,20 @@ const HeroSection = () => {
           </div>
 
           <motion.div
-            className="flex flex-wrap gap-3"
+            className="flex flex-wrap gap-3 justify-center sm:justify-start"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
             >
               View Work <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"
             >
               <Mail className="w-4 h-4" /> Get in Touch
             </a>
@@ -108,9 +99,9 @@ const HeroSection = () => {
               href="https://drive.google.com/file/d/1gtJkYXFXky0BnYuCfLbGWTCs22ETeAJ8/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-secondary transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-secondary transition-colors"
             >
-              <Download className="w-4 h-4" /> Resume
+              <ExternalLink className="w-4 h-4" /> Resume
             </a>
           </motion.div>
         </motion.div>
@@ -126,9 +117,9 @@ const HeroSection = () => {
               <div className="w-3 h-3 rounded-full bg-destructive/60" />
               <div className="w-3 h-3 rounded-full bg-[hsl(45,93%,47%,0.6)]" />
               <div className="w-3 h-3 rounded-full bg-accent/60" />
-              <span className="ml-2 text-xs font-mono text-muted-foreground">system.ts</span>
+              <span className="ml-2 text-[10px] md:text-xs font-mono text-muted-foreground">system.ts</span>
             </div>
-            <div className="p-5 font-mono text-sm space-y-1 min-h-[320px]">
+            <div className="p-4 md:p-5 font-mono text-xs md:text-sm space-y-1 min-h-[280px] md:min-h-[320px]">
               {terminalLines.slice(0, visibleLines).map((line, i) => (
                 <div key={i} className="flex">
                   {line.startsWith("$") ? (

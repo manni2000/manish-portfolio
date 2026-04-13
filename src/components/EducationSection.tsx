@@ -12,18 +12,18 @@ const EducationSection = () => (
       </MotionDiv>
 
       <MotionDiv>
-        <div className="glass-card-hover p-8 flex items-start gap-6">
-          <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
-            <GraduationCap className="w-7 h-7 text-primary" />
+        <div className="glass-card-hover p-5 md:p-8 flex items-start gap-4 md:gap-6">
+          <div className="p-2.5 md:p-3 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
+            <GraduationCap className="w-5 h-5 md:w-7 md:h-7 text-primary" />
           </div>
           <div className="space-y-2">
-            <h3 className="text-xl font-bold text-foreground">
+            <h3 className="text-lg md:text-xl font-bold text-foreground">
               Indian Institute of Engineering Science and Technology (IIEST), Shibpur
             </h3>
-            <p className="text-sm font-medium text-primary font-mono">
+            <p className="text-xs md:text-sm font-medium text-primary font-mono">
               Bachelor of Technology (B.Tech) — Information Technology
             </p>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 CGPA: 7.8

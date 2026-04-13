@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => (
-  <footer className="py-8 border-t border-border/30">
-    <div className="container max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <span className="font-mono text-xs text-muted-foreground">
+  <footer className="py-6 md:py-8 border-t border-border/30">
+    <div className="container max-w-6xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 md:gap-6">
+      <span className="font-mono text-[10px] md:text-xs text-muted-foreground text-center sm:text-left">
         © {new Date().getFullYear()} Manish Kumar · Engineered with precision
       </span>
       <div className="flex items-center gap-4">

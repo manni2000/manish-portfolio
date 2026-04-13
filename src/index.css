@@ -90,7 +90,7 @@
   }
 
   .section-padding {
-    @apply py-24 md:py-32 px-6 md:px-8;
+    @apply py-16 md:py-20 lg:py-24 xl:py-32 px-4 md:px-6 lg:px-8;
   }
 
   .cursor-glow {
@@ -115,6 +115,12 @@
 
   .timeline-line {
     @apply absolute left-[19px] top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/20 to-transparent;
+  }
+
+  @media (max-width: 640px) {
+    .timeline-line {
+      display: none;
+    }
   }
 
   .timeline-dot {

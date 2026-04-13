@@ -26,17 +26,17 @@ const categories = [
 const TechStackSection = () => (
   <MotionSection id="stack" className="section-padding">
     <div className="container max-w-6xl mx-auto">
-      <MotionDiv className="mb-16 text-center">
+      <MotionDiv className="mb-12 md:mb-16 text-center">
         <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Technology</p>
-        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
           Systems <span className="gradient-text">Arsenal</span>
         </h2>
       </MotionDiv>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         {categories.map((cat) => (
           <MotionItem key={cat.title}>
-            <div className="glass-card-hover p-6 group h-full">
+            <div className="glass-card-hover p-4 md:p-6 group h-full">
               <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               <div className="relative z-10">
                 <h3 className="font-bold text-foreground mb-4 text-sm uppercase tracking-wider">{cat.title}</h3>

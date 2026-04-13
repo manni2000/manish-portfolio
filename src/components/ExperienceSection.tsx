@@ -39,19 +39,19 @@ const ExperienceSection = () => (
       </MotionDiv>
 
       <div className="relative">
-        <div className="timeline-line" />
-        <div className="space-y-12">
+        <div className="timeline-line hidden sm:block" />
+        <div className="space-y-8 md:space-y-12">
           {experiences.map((exp) => (
             <MotionItem key={exp.period}>
-              <div className="flex gap-6">
-                <div className="timeline-dot">
+              <div className="flex gap-4 md:gap-6">
+                <div className="timeline-dot shrink-0">
                   <Briefcase className="w-4 h-4 text-primary" />
                 </div>
-                <div className="glass-card p-6 flex-1">
+                <div className="glass-card p-4 md:p-6 flex-1">
                   <span className="text-xs font-mono text-primary">{exp.period}</span>
-                  <h3 className="text-lg font-bold text-foreground mt-1">{exp.role}</h3>
+                  <h3 className="text-base md:text-lg font-bold text-foreground mt-1">{exp.role}</h3>
                   <p className="text-sm text-muted-foreground">{exp.company}</p>
-                  <p className="text-xs text-muted-foreground/70 mb-4">{exp.location}</p>
+                  <p className="text-xs text-muted-foreground/70 mb-3 md:mb-4">{exp.location}</p>
                   <ul className="space-y-2">
                     {exp.bullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">

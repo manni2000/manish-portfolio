@@ -51,19 +51,19 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
 const MetricsSection = () => (
   <MotionSection className="section-padding border-y border-border/30">
     <div className="container max-w-6xl mx-auto">
-      <MotionDiv className="mb-16 text-center">
+      <MotionDiv className="mb-12 md:mb-16 text-center">
         <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Impact</p>
-        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
           Engineering <span className="gradient-text">Metrics</span>
         </h2>
       </MotionDiv>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {metrics.map((m) => (
           <MotionDiv key={m.label}>
             <div className="text-center space-y-2">
               <AnimatedCounter target={m.value} suffix={m.suffix} />
-              <p className="text-sm text-muted-foreground font-medium">{m.label}</p>
+              <p className="text-xs md:text-sm text-muted-foreground font-medium">{m.label}</p>
             </div>
           </MotionDiv>
         ))}

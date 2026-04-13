@@ -13,19 +13,19 @@ const achievements = [
 const AchievementsSection = () => (
   <MotionSection className="section-padding">
     <div className="container max-w-4xl mx-auto">
-      <MotionDiv className="mb-16 text-center">
+      <MotionDiv className="mb-12 md:mb-16 text-center">
         <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Recognition</p>
-        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
           Open Source & <span className="gradient-text">Achievements</span>
         </h2>
       </MotionDiv>
 
-      <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
         {achievements.map((a) => {
           const Icon = a.icon;
           return (
             <MotionItem key={a.title}>
-              <div className="glass-card-hover p-5 flex items-start gap-4 h-full">
+              <div className="glass-card-hover p-4 md:p-5 flex items-start gap-3 md:gap-4 h-full">
                 <div className="p-2 rounded-lg bg-primary/10 shrink-0">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>

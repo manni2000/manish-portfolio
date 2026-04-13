@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Menu, X } from "lucide-react";
 
 const links = [
   { label: "Work", href: "#projects" },
@@ -11,6 +11,7 @@ const links = [
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -24,11 +25,11 @@ const Navbar = () => {
         scrolled ? "glass-card border-b border-border/50 py-3" : "py-5"
       }`}
     >
-      <div className="container max-w-6xl mx-auto flex items-center justify-between px-6">
+      <div className="container max-w-6xl mx-auto flex items-center px-4 md:px-6">
         <a href="#" className="font-mono text-sm font-semibold text-primary tracking-wider">
-          &lt;MKM /&gt;
+          &lt;/&gt;
         </a>
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-6 md:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
@@ -39,7 +40,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <a href="https://github.com/manni2000" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
             <Github className="w-4 h-4" />
           </a>
@@ -48,12 +49,43 @@ const Navbar = () => {
           </a>
           <a
             href="#contact"
-            className="text-sm px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200"
+            className="hidden sm:inline-block text-sm px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200"
           >
             Let's Talk
           </a>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl">
+          <div className="container max-w-6xl mx-auto px-4 py-4 space-y-3">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200 text-center"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
