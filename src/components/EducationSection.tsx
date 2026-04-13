@@ -1,19 +1,17 @@
 import { GraduationCap } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { MotionSection, MotionDiv } from "./MotionWrappers";
 
-const EducationSection = () => {
-  const ref = useScrollReveal();
+const EducationSection = () => (
+  <MotionSection id="education" className="section-padding">
+    <div className="container max-w-4xl mx-auto">
+      <MotionDiv className="mb-16 text-center">
+        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Foundation</p>
+        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+          Academic <span className="gradient-text">Background</span>
+        </h2>
+      </MotionDiv>
 
-  return (
-    <section id="education" className="section-padding">
-      <div className="container max-w-4xl mx-auto" ref={ref}>
-        <div className="mb-16 text-center">
-          <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Foundation</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
-            Academic <span className="gradient-text">Background</span>
-          </h2>
-        </div>
-
+      <MotionDiv>
         <div className="glass-card-hover p-8 flex items-start gap-6">
           <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 shrink-0">
             <GraduationCap className="w-7 h-7 text-primary" />
@@ -41,9 +39,9 @@ const EducationSection = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </MotionDiv>
+    </div>
+  </MotionSection>
+);
 
 export default EducationSection;

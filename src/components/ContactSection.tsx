@@ -1,7 +1,15 @@
+import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => (
-  <section id="contact" className="section-padding">
+  <motion.section
+    id="contact"
+    className="section-padding"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+  >
     <div className="container max-w-3xl mx-auto text-center">
       <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Connect</p>
       <h2 className="text-4xl md:text-5xl font-black text-foreground mb-6">
@@ -37,7 +45,7 @@ const ContactSection = () => (
         </a>
       </div>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default ContactSection;

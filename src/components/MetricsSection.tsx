@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { MotionSection, MotionDiv } from "./MotionWrappers";
 
 const metrics = [
   { value: 2.8, suffix: "M+", label: "Records Processed" },
@@ -48,25 +49,27 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
 };
 
 const MetricsSection = () => (
-  <section className="section-padding border-y border-border/30">
+  <MotionSection className="section-padding border-y border-border/30">
     <div className="container max-w-6xl mx-auto">
-      <div className="mb-16 text-center">
+      <MotionDiv className="mb-16 text-center">
         <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Impact</p>
         <h2 className="text-3xl md:text-4xl font-black text-foreground">
           Engineering <span className="gradient-text">Metrics</span>
         </h2>
-      </div>
+      </MotionDiv>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
         {metrics.map((m) => (
-          <div key={m.label} className="text-center space-y-2">
-            <AnimatedCounter target={m.value} suffix={m.suffix} />
-            <p className="text-sm text-muted-foreground font-medium">{m.label}</p>
-          </div>
+          <MotionDiv key={m.label}>
+            <div className="text-center space-y-2">
+              <AnimatedCounter target={m.value} suffix={m.suffix} />
+              <p className="text-sm text-muted-foreground font-medium">{m.label}</p>
+            </div>
+          </MotionDiv>
         ))}
       </div>
     </div>
-  </section>
+  </MotionSection>
 );
 
 export default MetricsSection;
