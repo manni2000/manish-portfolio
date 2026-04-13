@@ -1,5 +1,5 @@
 import { Briefcase } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { MotionSection, MotionDiv, MotionItem } from "./MotionWrappers";
 
 const experiences = [
   {
@@ -28,25 +28,22 @@ const experiences = [
   },
 ];
 
-const ExperienceSection = () => {
-  const ref = useScrollReveal();
+const ExperienceSection = () => (
+  <MotionSection id="experience" className="section-padding">
+    <div className="container max-w-4xl mx-auto">
+      <MotionDiv className="mb-16 text-center">
+        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Career Path · 1 Year 5 Months</p>
+        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+          Engineering <span className="gradient-text">Experience</span>
+        </h2>
+      </MotionDiv>
 
-  return (
-    <section id="experience" className="section-padding">
-      <div className="container max-w-4xl mx-auto" ref={ref}>
-        <div className="mb-16 text-center">
-          <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Career Path · 1 Year 5 Months</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
-            Engineering <span className="gradient-text">Experience</span>
-          </h2>
-        </div>
-
-        <div className="relative">
-          <div className="timeline-line" />
-
-          <div className="space-y-12">
-            {experiences.map((exp) => (
-              <div key={exp.period} className="flex gap-6">
+      <div className="relative">
+        <div className="timeline-line" />
+        <div className="space-y-12">
+          {experiences.map((exp) => (
+            <MotionItem key={exp.period}>
+              <div className="flex gap-6">
                 <div className="timeline-dot">
                   <Briefcase className="w-4 h-4 text-primary" />
                 </div>
@@ -65,12 +62,12 @@ const ExperienceSection = () => {
                   </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            </MotionItem>
+          ))}
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </MotionSection>
+);
 
 export default ExperienceSection;

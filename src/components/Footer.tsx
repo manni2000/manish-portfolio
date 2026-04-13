@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className="py-8 border-t border-border/30">
     <div className="container max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <span className="font-mono text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Manish Kumar Mandal · Engineered with precision
+        © {new Date().getFullYear()} Manish Kumar · Engineered with precision
       </span>
       <div className="flex items-center gap-4">
         <a href="https://github.com/manni2000" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 
 const terminalLines = [
@@ -40,25 +41,57 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-mono text-primary">Available for opportunities</span>
-          </div>
+          </motion.div>
 
           <div className="space-y-4">
-            <p className="text-lg font-semibold text-primary font-mono">Hi, I'm Manish Kumar Mandal</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground">
+            <motion.p
+              className="text-lg font-semibold text-primary font-mono"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              Hi, I'm Manish Kumar
+            </motion.p>
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
               Building{" "}
               <span className="gradient-text">production-grade</span>{" "}
               systems where AI, scale, and performance converge.
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+            </motion.h1>
+            <motion.p
+              className="text-lg text-muted-foreground max-w-lg leading-relaxed"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            >
               Full Stack Engineer specializing in AI-powered platforms, real-time systems, and scalable architecture. B.Tech in IT from IIEST Shibpur.
-            </p>
+            </motion.p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <motion.div
+            className="flex flex-wrap gap-3"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
@@ -79,10 +112,15 @@ const HeroSection = () => {
             >
               <Download className="w-4 h-4" /> Resume
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="glass-card p-1 rounded-xl animate-pulse-glow">
+        <motion.div
+          className="glass-card p-1 rounded-xl animate-pulse-glow"
+          initial={{ opacity: 0, x: 40, scale: 0.95 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="bg-background/80 rounded-lg overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50">
               <div className="w-3 h-3 rounded-full bg-destructive/60" />
@@ -112,7 +150,7 @@ const HeroSection = () => {
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { Award, Trophy, Code, GitPullRequest } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { MotionSection, MotionDiv, MotionItem } from "./MotionWrappers";
 
 const achievements = [
   { title: "400+ DSA Problems Solved", desc: "LeetCode, GeeksforGeeks and other competitive platforms", icon: Code },
@@ -10,24 +10,22 @@ const achievements = [
   { title: "Kshitij — IIT Kharagpur", desc: "Qualified B-Plan hackathon organized by IIT Kharagpur, 2022", icon: Trophy },
 ];
 
-const AchievementsSection = () => {
-  const ref = useScrollReveal();
+const AchievementsSection = () => (
+  <MotionSection className="section-padding">
+    <div className="container max-w-4xl mx-auto">
+      <MotionDiv className="mb-16 text-center">
+        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Recognition</p>
+        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+          Open Source & <span className="gradient-text">Achievements</span>
+        </h2>
+      </MotionDiv>
 
-  return (
-    <section className="section-padding">
-      <div className="container max-w-4xl mx-auto" ref={ref}>
-        <div className="mb-16 text-center">
-          <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Recognition</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
-            Open Source & <span className="gradient-text">Achievements</span>
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-4">
-          {achievements.map((a) => {
-            const Icon = a.icon;
-            return (
-              <div key={a.title} className="glass-card-hover p-5 flex items-start gap-4">
+      <div className="grid sm:grid-cols-2 gap-4">
+        {achievements.map((a) => {
+          const Icon = a.icon;
+          return (
+            <MotionItem key={a.title}>
+              <div className="glass-card-hover p-5 flex items-start gap-4 h-full">
                 <div className="p-2 rounded-lg bg-primary/10 shrink-0">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
@@ -36,12 +34,12 @@ const AchievementsSection = () => {
                   <p className="text-xs text-muted-foreground mt-1">{a.desc}</p>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </MotionItem>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </MotionSection>
+);
 
 export default AchievementsSection;

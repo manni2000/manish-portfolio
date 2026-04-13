@@ -1,5 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { MotionSection, MotionDiv, MotionItem } from "./MotionWrappers";
 
 const projects = [
   {
@@ -32,26 +32,20 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
-  const ref = useScrollReveal();
+const ProjectsSection = () => (
+  <MotionSection id="projects" className="section-padding">
+    <div className="container max-w-6xl mx-auto">
+      <MotionDiv className="mb-16 text-center">
+        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Featured Work</p>
+        <h2 className="text-3xl md:text-4xl font-black text-foreground">
+          Systems Built for <span className="gradient-text">Scale</span>
+        </h2>
+      </MotionDiv>
 
-  return (
-    <section id="projects" className="section-padding">
-      <div className="container max-w-6xl mx-auto" ref={ref}>
-        <div className="mb-16 text-center">
-          <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Featured Work</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
-            Systems Built for <span className="gradient-text">Scale</span>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((p, i) => (
-            <div
-              key={p.title}
-              className="glass-card-hover p-6 group"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
+      <div className="grid md:grid-cols-2 gap-6">
+        {projects.map((p) => (
+          <MotionItem key={p.title}>
+            <div className="glass-card-hover p-6 group h-full">
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
                   <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
@@ -74,11 +68,11 @@ const ProjectsSection = () => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </MotionItem>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </MotionSection>
+);
 
 export default ProjectsSection;
