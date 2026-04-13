@@ -86,7 +86,7 @@ const HeroSection = () => {
           <div className="bg-background/80 rounded-lg overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50">
               <div className="w-3 h-3 rounded-full bg-destructive/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+              <div className="w-3 h-3 rounded-full bg-[hsl(45,93%,47%,0.6)]" />
               <div className="w-3 h-3 rounded-full bg-accent/60" />
               <span className="ml-2 text-xs font-mono text-muted-foreground">system.ts</span>
             </div>
