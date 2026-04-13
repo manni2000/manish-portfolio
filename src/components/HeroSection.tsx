@@ -96,7 +96,7 @@ const HeroSection = () => {
               <Mail className="w-4 h-4" /> Get in Touch
             </a>
             <a
-              href="https://drive.google.com/file/d/1gtJkYXFXky0BnYuCfLbGWTCs22ETeAJ8/view?usp=sharing"
+              href="https://drive.google.com/file/d/1EGSHN-wgPM13XhMPrlBdNnL653QfpUAM/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-secondary transition-colors"
