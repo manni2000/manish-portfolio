@@ -35,13 +35,11 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center section-padding pt-32 relative overflow-hidden">
-      {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--primary)/0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--primary)/0.03)_1px,transparent_1px)] bg-[size:64px_64px]" />
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-[120px]" />
 
       <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        {/* Left */}
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -49,13 +47,14 @@ const HeroSection = () => {
           </div>
 
           <div className="space-y-4">
+            <p className="text-lg font-semibold text-primary font-mono">Hi, I'm Manish Kumar Mandal</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-foreground">
               Building{" "}
               <span className="gradient-text">production-grade</span>{" "}
               systems where AI, scale, and performance converge.
             </h1>
             <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-              Full Stack Engineer specializing in AI-powered platforms, real-time systems, and scalable architecture.
+              Full Stack Engineer specializing in AI-powered platforms, real-time systems, and scalable architecture. B.Tech in IT from IIEST Shibpur.
             </p>
           </div>
 
@@ -73,7 +72,9 @@ const HeroSection = () => {
               <Mail className="w-4 h-4" /> Get in Touch
             </a>
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1gtJkYXFXky0BnYuCfLbGWTCs22ETeAJ8/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-secondary transition-colors"
             >
               <Download className="w-4 h-4" /> Resume
@@ -81,7 +82,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right - Terminal */}
         <div className="glass-card p-1 rounded-xl animate-pulse-glow">
           <div className="bg-background/80 rounded-lg overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-border/50">

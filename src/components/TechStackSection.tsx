@@ -2,23 +2,23 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const categories = [
   {
-    title: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Languages & Web",
+    items: ["C", "C++", "Python", "JavaScript", "HTML", "CSS"],
     gradient: "from-primary/20 to-primary/5",
   },
   {
-    title: "Backend",
-    items: ["Node.js", "Express", "Django", "WebSockets"],
+    title: "Frameworks",
+    items: ["React", "Next.js", "TypeScript", "Django", "Node.js", "Express", "WebSocket", "Tailwind CSS"],
     gradient: "from-accent/20 to-accent/5",
   },
   {
-    title: "AI / Data",
-    items: ["OpenAI", "RAG", "LLM", "Python", "Scraping"],
+    title: "Databases & Cloud",
+    items: ["MySQL", "MongoDB", "Firebase", "Redis", "Google Cloud", "AWS", "Vercel"],
     gradient: "from-primary/15 to-accent/10",
   },
   {
-    title: "Infrastructure",
-    items: ["AWS", "GCP", "Redis", "MongoDB", "Firebase"],
+    title: "Dev Tools & AI",
+    items: ["Git/GitHub", "VS Code", "Figma", "REST APIs", "Agile", "OpenAI GPT", "Google Gemini", "Cursor IDE", "GitHub Copilot"],
     gradient: "from-accent/15 to-primary/10",
   },
 ];
