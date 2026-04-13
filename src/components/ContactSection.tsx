@@ -14,13 +14,13 @@ const ContactSection = () => (
 
       <div className="flex flex-wrap justify-center gap-4">
         <a
-          href="mailto:hello@example.com"
+          href="mailto:manishmandal9734@gmail.com"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
         >
-          <Mail className="w-4 h-4" /> Email Me <ArrowUpRight className="w-3 h-3" />
+          <Mail className="w-4 h-4" /> manishmandal9734@gmail.com <ArrowUpRight className="w-3 h-3" />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/manish-kr-mandal/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"
@@ -28,7 +28,7 @@ const ContactSection = () => (
           <Linkedin className="w-4 h-4" /> LinkedIn
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/manni2000"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"

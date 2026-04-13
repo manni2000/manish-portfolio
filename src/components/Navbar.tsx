@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Github, Linkedin } from "lucide-react";
 
 const links = [
   { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Stack", href: "#stack" },
   { label: "Contact", href: "#contact" },
 ];
@@ -24,7 +26,7 @@ const Navbar = () => {
     >
       <div className="container max-w-6xl mx-auto flex items-center justify-between px-6">
         <a href="#" className="font-mono text-sm font-semibold text-primary tracking-wider">
-          &lt;/&gt;
+          &lt;MKM /&gt;
         </a>
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
@@ -37,12 +39,20 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <a
-          href="#contact"
-          className="text-sm px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200"
-        >
-          Let's Talk
-        </a>
+        <div className="flex items-center gap-3">
+          <a href="https://github.com/manni2000" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Github className="w-4 h-4" />
+          </a>
+          <a href="https://www.linkedin.com/in/manish-kr-mandal/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Linkedin className="w-4 h-4" />
+          </a>
+          <a
+            href="#contact"
+            className="text-sm px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200"
+          >
+            Let's Talk
+          </a>
+        </div>
       </div>
     </nav>
   );

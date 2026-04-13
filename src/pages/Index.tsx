@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import EducationSection from "@/components/EducationSection";
 import TechStackSection from "@/components/TechStackSection";
 import MetricsSection from "@/components/MetricsSection";
 import AchievementsSection from "@/components/AchievementsSection";
@@ -18,6 +19,7 @@ const Index = () => (
     <TrustBar />
     <ProjectsSection />
     <ExperienceSection />
+    <EducationSection />
     <TechStackSection />
     <MetricsSection />
     <AchievementsSection />

@@ -2,9 +2,10 @@ const items = [
   "Sam Digital Solutions",
   "GreenAI Services",
   "Cartel AI",
-  "AI Systems",
+  "IIEST Shibpur",
   "2.8M+ Records Processed",
   "400+ DSA Problems",
+  "Chegg SME",
 ];
 
 const TrustBar = () => (
