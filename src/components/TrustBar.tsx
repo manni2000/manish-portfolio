@@ -1,8 +1,11 @@
 const items = [
   "TheCartel AI",
   "Sam Digital Solutions",
-  "GreenAI Services Pvt Ltd",
-  "IIEST Shibpur"
+  "GreenAI Services",
+  "Merlion Asset Mgmt",
+  "Goinboxly Cloud",
+  "Kokilaben Hospital",
+  "IIEST Shibpur",
 ];
 
 const TrustBar = () => (
@@ -11,11 +14,15 @@ const TrustBar = () => (
       <p className="text-[10px] md:text-xs font-mono text-muted-foreground mb-4 md:mb-6 uppercase tracking-widest text-center">
         Worked With · Built For · Delivered
       </p>
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-        {items.map((item) => (
+    </div>
+
+    {/* Infinite marquee */}
+    <div className="marquee-track marquee-mask overflow-hidden">
+      <div className="flex w-max animate-marquee gap-3 md:gap-4">
+        {[...items, ...items].map((item, i) => (
           <div
-            key={item}
-            className="px-3 py-2 md:px-5 md:py-2.5 rounded-lg border border-border/50 bg-card/40 text-xs md:text-sm text-muted-foreground font-medium hover:text-foreground hover:border-primary/30 transition-all duration-300"
+            key={`${item}-${i}`}
+            className="shrink-0 px-4 py-2 md:px-5 md:py-2.5 rounded-lg border border-border/50 bg-card/40 text-xs md:text-sm text-muted-foreground font-medium hover:text-foreground hover:border-primary/30 transition-all duration-300"
           >
             {item}
           </div>

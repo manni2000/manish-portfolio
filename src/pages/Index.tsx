@@ -1,4 +1,5 @@
 import CursorGlow from "@/components/CursorGlow";
+import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustBar from "@/components/TrustBar";
@@ -13,6 +14,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground relative">
+    <ScrollProgress />
     <CursorGlow />
     <Navbar />
     <HeroSection />

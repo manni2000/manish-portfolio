@@ -11,7 +11,7 @@ const ContactSection = () => (
     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
   >
     <div className="container max-w-3xl mx-auto text-center px-4">
-      <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Connect</p>
+      <span className="kicker kicker-center justify-center mb-3">Connect</span>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-6">
         Let's build something{" "}
         <span className="gradient-text">exceptional</span>.

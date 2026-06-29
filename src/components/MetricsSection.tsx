@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MotionSection, MotionDiv } from "./MotionWrappers";
+import SectionHeading from "./SectionHeading";
 
 const metrics = [
   { value: 2.8, suffix: "M+", label: "Records Processed" },
@@ -51,17 +52,19 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
 const MetricsSection = () => (
   <MotionSection className="section-padding border-y border-border/30">
     <div className="container max-w-6xl mx-auto">
-      <MotionDiv className="mb-12 md:mb-16 text-center">
-        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Impact</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
-          Engineering <span className="gradient-text">Metrics</span>
-        </h2>
-      </MotionDiv>
+      <SectionHeading
+        kicker="Impact"
+        title={
+          <>
+            Engineering <span className="gradient-text">Metrics</span>
+          </>
+        }
+      />
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {metrics.map((m) => (
           <MotionDiv key={m.label}>
-            <div className="text-center space-y-2">
+            <div className="glass-card-hover text-center space-y-2 p-5 md:p-6 h-full flex flex-col justify-center">
               <AnimatedCounter target={m.value} suffix={m.suffix} />
               <p className="text-xs md:text-sm text-muted-foreground font-medium">{m.label}</p>
             </div>

@@ -1,5 +1,6 @@
 import { Award, Trophy, Code, GitPullRequest } from "lucide-react";
-import { MotionSection, MotionDiv, MotionItem } from "./MotionWrappers";
+import { MotionSection, MotionItem } from "./MotionWrappers";
+import SectionHeading from "./SectionHeading";
 
 const achievements = [
   { title: "400+ DSA Problems Solved", desc: "LeetCode, GeeksforGeeks and other competitive platforms", icon: Code },
@@ -13,12 +14,14 @@ const achievements = [
 const AchievementsSection = () => (
   <MotionSection className="section-padding">
     <div className="container max-w-4xl mx-auto">
-      <MotionDiv className="mb-12 md:mb-16 text-center">
-        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Recognition</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
-          Open Source & <span className="gradient-text">Achievements</span>
-        </h2>
-      </MotionDiv>
+      <SectionHeading
+        kicker="Recognition"
+        title={
+          <>
+            Open Source & <span className="gradient-text">Achievements</span>
+          </>
+        }
+      />
 
       <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
         {achievements.map((a) => {

@@ -82,6 +82,39 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))];
   }
 
+  /* Animated availability status dot */
+  .status-dot {
+    @apply relative inline-flex w-2 h-2 rounded-full bg-accent;
+  }
+  .status-dot::after {
+    content: "";
+    @apply absolute inset-0 rounded-full bg-accent;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  /* Pill / chip used for meta info */
+  .meta-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border/60 bg-card/40 text-xs font-medium text-muted-foreground;
+  }
+
+  /* Gradient-bordered card (uses padding-box trick) */
+  .gradient-border {
+    @apply relative rounded-xl;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)/0.5), hsl(var(--accent)/0.4), transparent 70%) border-box;
+    border: 1px solid transparent;
+  }
+
+  /* Section heading kicker label */
+  .kicker {
+    @apply inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest;
+  }
+  .kicker::before {
+    content: "";
+    @apply w-6 h-px bg-gradient-to-r from-transparent to-primary;
+  }
+  .kicker.kicker-center::before { @apply hidden; }
+
   .glow-border {
     @apply relative;
     background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
@@ -125,6 +158,12 @@
 
   .timeline-dot {
     @apply w-10 h-10 rounded-full border-2 border-primary bg-background flex items-center justify-center shrink-0 shadow-[0_0_15px_-3px_hsl(var(--primary)/0.5)];
+  }
+
+  /* Marquee strip for the tech/trust band */
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
 }
 
@@ -170,4 +209,35 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  @keyframes ping {
+    75%, 100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  @keyframes aurora {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(3%, -3%) scale(1.05); }
+    66% { transform: translate(-2%, 2%) scale(0.97); }
+  }
+  .animate-aurora { animation: aurora 18s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-aurora,
+    .animate-pulse-glow,
+    .status-dot::after {
+      animation: none !important;
+    }
+  }
 }

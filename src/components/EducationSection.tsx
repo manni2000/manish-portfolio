@@ -1,15 +1,18 @@
 import { GraduationCap } from "lucide-react";
 import { MotionSection, MotionDiv } from "./MotionWrappers";
+import SectionHeading from "./SectionHeading";
 
 const EducationSection = () => (
   <MotionSection id="education" className="section-padding">
     <div className="container max-w-4xl mx-auto">
-      <MotionDiv className="mb-16 text-center">
-        <p className="text-xs font-mono text-primary uppercase tracking-widest mb-3">Foundation</p>
-        <h2 className="text-3xl md:text-4xl font-black text-foreground">
-          Academic <span className="gradient-text">Background</span>
-        </h2>
-      </MotionDiv>
+      <SectionHeading
+        kicker="Foundation"
+        title={
+          <>
+            Academic <span className="gradient-text">Background</span>
+          </>
+        }
+      />
 
       <MotionDiv>
         <div className="glass-card-hover p-5 md:p-8 flex items-start gap-4 md:gap-6">
