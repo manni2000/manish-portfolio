@@ -81,6 +81,8 @@ If the 3D badge does not load, confirm hardware acceleration and WebGL are enabl
 4. Add the verified resume PDF if available.
 5. Deploy. No persistent service or external database is required by the portfolio itself.
 
+In **Project Settings → Build and Deployment → Build & Development Settings**, keep **Framework Preset** set to **Next.js** and disable the **Output Directory** override. The repository also sets `outputDirectory` to `null` in `vercel.json` so stale Vite-era values such as `dist` do not override Next.js framework defaults.
+
 Update the canonical production domain in `src/app/layout.tsx`, `src/app/sitemap.ts` and `src/app/robots.ts` if it differs from the current placeholder domain.
 
 ## Verification
