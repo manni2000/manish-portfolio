@@ -8,8 +8,8 @@ import { useRef, useState } from "react";
 import { portfolio } from "@/data/portfolio";
 
 function BadgePhysics() {
-  const anchor = useRef<RapierRigidBody>(null);
-  const card = useRef<RapierRigidBody>(null);
+  const anchor = useRef<RapierRigidBody>(null!);
+  const card = useRef<RapierRigidBody>(null!);
   const [active, setActive] = useState(false);
   useRopeJoint(anchor, card, [[0, 0, 0], [0, 1.45, 0], 2.3]);
   useFrame(() => {
