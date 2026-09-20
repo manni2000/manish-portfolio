@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import Script from "next/script";
+import { projects } from "@/data/portfolio";
+
+export function generateStaticParams() { return projects.map(project => ({ slug: project.slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const project = projects.find(p => p.slug === slug); if (!project) return {}; return { title: project.title, description: project.description, alternates: { canonical: `/projects/${slug}` } }; }
+
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; const index = projects.findIndex(p => p.slug === slug); if (index < 0) notFound(); const project = projects[index]; const previous = projects[(index - 1 + projects.length) % projects.length]; const next = projects[(index + 1) % projects.length];
+  const sections = [
+    ["Context", project.context], ["Problem", project.problem], ["Constraints", project.constraints], ["Architecture", project.architecture], ["Major features", project.features], ["Engineering decisions", project.decisions], ["Challenges", project.challenges], ["Outcomes", project.outcomes],
+  ] as const;
+  const schema = { "@context":"https://schema.org", "@type":"CreativeWork", name:project.title, description:project.description, creator:{"@type":"Person",name:"Manish Kumar"}, keywords:project.technologies.join(", ") };
+  return <><Script id={`project-${project.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g,"\\u003c") }}/><article><header className="case-hero grid-bg"><div className="shell"><Link href="/projects" className="mono muted"><ArrowLeft size={12} style={{display:"inline"}}/> Project archive</Link><div className="eyebrow" style={{marginTop:35}}>{project.category} · Case study 0{index+1}</div><h1 className="case-title">{project.title}</h1><p style={{fontSize:"clamp(1.2rem,2.5vw,2rem)",maxWidth:860,lineHeight:1.35}}>{project.subtitle}</p><div className="case-meta"><div><span className="mono muted">Role</span><p>{project.role}</p></div><div><span className="mono muted">Stack</span><p>{project.technologies.slice(0,4).join(" · ")}</p></div><div><span className="mono muted">Access</span><div className="actions" style={{marginTop:10}}>{project.liveUrl && <a className="button" href={project.liveUrl} target="_blank" rel="noreferrer">Live site <ArrowUpRight size={14}/></a>}{project.sourceUrl && <a className="button" href={project.sourceUrl} target="_blank" rel="noreferrer">Source <ArrowUpRight size={14}/></a>} {!project.liveUrl && !project.sourceUrl && <span className="muted">Private project</span>}</div></div></div></div></header><div className="shell">{sections.map(([title,content])=><section className="case-section" key={title} data-reveal><h2>{title}</h2><div className="case-content">{typeof content === "string" ? <p>{content}</p> : <ul className="case-list">{content.map(item=><li key={item}>{item}</li>)}</ul>}</div></section>)}</div><nav className="case-nav" aria-label="Project navigation"><Link href={`/projects/${previous.slug}`}><span className="mono muted">Previous</span><h3><ArrowLeft size={17} style={{display:"inline"}}/> {previous.title}</h3></Link><Link href={`/projects/${next.slug}`}><span className="mono muted">Next</span><h3>{next.title} <ArrowRight size={17} style={{display:"inline"}}/></h3></Link></nav></article></>;
+}
