@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     slug: "dailytools247",
     title: "DailyTools247",
-    subtitle: "168 browser-based utilities serving more than 10,000 users",
+    subtitle: "200+ browser-based utilities serving more than 10,000 users",
     description: "A free, no-signup utility platform covering PDF, image, developer, security, finance, SEO and AI tools across 17 categories.",
     category: "Developer Tools",
     role: "Full Stack Product Engineer",
@@ -192,7 +192,7 @@ export const portfolio = {
   assistant: [
     { keywords: ["built", "projects", "work"], question: "What has Manish built?", answer: "Manish has built DailyTools247, a crypto-focused AI platform, an email campaign platform, and a multi-agent WhatsApp CRM. His work spans product interfaces, APIs, data systems, AI applications, automation and cloud delivery." },
     { keywords: ["stack", "strongest", "technology", "technologies"], question: "What is his strongest technology stack?", answer: "Manish works most broadly across TypeScript, React and Next.js on the frontend; Node.js, Express.js, Django and Python on the backend; MongoDB, PostgreSQL, MySQL and Redis for data; and GCP or Vercel for deployment." },
-    { keywords: ["dailytools", "tools", "168"], question: "Tell me about DailyTools247.", answer: "DailyTools247 is a free, no-signup platform with 168 browser-based utilities across 17 categories. It serves more than 10,000 users and grew organically without paid advertising." },
+    { keywords: ["dailytools", "tools", "168"], question: "Tell me about DailyTools247.", answer: "DailyTools247 is a free, no-signup platform with 200+ browser-based utilities across 17 categories. It serves more than 10,000 users and grew organically without paid advertising." },
     { keywords: ["ai", "rag", "llm"], question: "Does Manish have AI application experience?", answer: "Yes. Manish has built RAG-based chatbot experiences, integrated LLM applications and real-time data APIs, prepared legal-domain training datasets, and contributed to a multilingual grammar-checking system." },
     { keywords: ["greenai", "green ai"], question: "What did he build at GreenAI?", answer: "At GreenAI, Manish shipped a cloud-deployed company platform, chatbot solutions across legal, enterprise and healthcare use cases, automation that processed more than 2.8 million web records, and structured more than 100,000 Markdown documents for legal-domain LLM training." },
     { keywords: ["open", "available", "full-time", "hire"], question: "Is he open to full-time roles?", answer: "Yes. Manish is open to full-time opportunities across remote, on-site and hybrid work modes." },
