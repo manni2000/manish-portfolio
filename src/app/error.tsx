@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({reset}:{error:Error&{digest?:string};reset:()=>void}){return <div className="page-hero"><div className="shell"><span className="eyebrow">Interface interruption</span><h1>Something slipped.</h1><p>This page could not be prepared. No technical details were exposed.</p><button className="button button-primary" onClick={reset}>Try again</button></div></div>}

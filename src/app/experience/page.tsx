@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import { Briefcase, MapPin } from "lucide-react";
+import PageHero from "@/components/portfolio/PageHero";
+import { portfolio } from "@/data/portfolio";
+
+export const metadata: Metadata = { title: "Experience", description: "Professional experience of Manish Kumar across full-stack development, AI applications and automation.", alternates: { canonical: "/experience" } };
+export default function ExperiencePage() { return <><PageHero index="02" label="Professional experience" title="Engineering Path"><p>{portfolio.personal.experienceLabel}. Building products across frontend, backend, AI, automation and cloud delivery.</p></PageHero><section className="section"><div className="shell"><div className="experience-list" style={{marginLeft:0}}>{portfolio.experience.map((exp,index)=><article className="experience-item" key={exp.company} data-reveal><div><span className="section-number">0{index+1}</span><p className="mono muted">{exp.period}</p><span className="pill"><Briefcase size={12}/>{exp.type}</span></div><div><h3>{exp.role}</h3><strong style={{color:"var(--cyan)"}}>{exp.company}</strong><p className="muted"><MapPin size={13} style={{display:"inline"}}/> {exp.location} · {exp.mode}</p><div className="tags">{exp.technologies.map(tech=><span className="tag" key={tech}>{tech}</span>)}</div><details open={index===0}><summary>Responsibilities +</summary><ul className="responsibilities">{exp.responsibilities.map(item=><li key={item}>{item}</li>)}</ul></details></div></article>)}</div></div></section></>; }
