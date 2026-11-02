@@ -14,7 +14,7 @@ export default function Hero() {
     <div className="shell hero-grid">
       <div>
         <motion.p className="mono" style={{ color: "var(--cyan)", marginBottom: 18 }} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>Hi, I’m {portfolio.personal.name}.</motion.p>
-        <motion.div className="hero-overline" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .45 }}><span className="pill"><span className="status-dot" /> {portfolio.availability.message}</span><span className="pill">{portfolio.personal.experienceLabel}</span></motion.div>
+        <motion.div className="hero-overline" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .45 }}><span className="pill">{portfolio.personal.experienceLabel}</span></motion.div>
         <motion.div className="hero-title display" initial="hidden" animate="show" transition={{ staggerChildren: .12, delayChildren: .15 }}>
           <span><motion.span variants={line}>FULL STACK</motion.span></span>
           <span><motion.em variants={line}>&amp; AI</motion.em></span>

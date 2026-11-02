@@ -110,13 +110,12 @@ export const portfolio = {
     initials: "MK",
     title: "Full Stack Developer & AI Application Engineer",
     experienceLabel: "Nearly 2 Years of Experience",
-    location: "Kolkata, West Bengal, India",
-    shortLocation: "Kolkata, India",
+    location: "India",
+    shortLocation: "India",
     institution: "IIEST Shibpur",
   },
   availability: {
     openToWork: true,
-    message: "Open to Full-Time Opportunities",
     workModes: ["Remote", "On-site", "Hybrid"],
   },
   social: {
@@ -133,9 +132,9 @@ export const portfolio = {
       company: "Sam Digital Solutions",
       period: "February 2026 – September 2026",
       role: "Full Stack Developer",
-      type: "Freelance, Part-time",
-      location: "Dubai, UAE",
-      mode: "Remote",
+      type: "Full-time,",
+      location: "Kolkata, India",
+      mode: "Hybrid",
       technologies: ["Next.js", "Django", "Python", "MERN", "RAG", "WhatsApp Cloud API"],
       responsibilities: [
         "Architected and developed the Trader AI Chatbot for Cartel AI using a RAG architecture, integrating real-time cryptocurrency data, technical and fundamental analysis, prediction integrations and referral analytics using Django and Next.js.",

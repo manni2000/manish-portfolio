@@ -93,7 +93,7 @@ function Navigation() {
         <nav aria-label="Mobile navigation">
           {nav.map(([label, href], index) => <motion.div key={href} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .15 + index * .045 }}><Link href={href}>{label}</Link></motion.div>)}
         </nav>
-        <div className="mobile-menu-meta"><div className="pill"><span className="status-dot" /> {portfolio.availability.message}</div><div className="actions mobile-socials"><a href={portfolio.social.github} target="_blank" rel="noreferrer">GitHub ↗</a><a href={portfolio.social.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div>
+        <div className="mobile-menu-meta"><div className="actions mobile-socials"><a href={portfolio.social.github} target="_blank" rel="noreferrer">GitHub ↗</a><a href={portfolio.social.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></div></div>
       </motion.div>}
     </AnimatePresence>
   </>;
@@ -173,7 +173,7 @@ function Footer() {
         <div><div className="mono muted">Navigate</div><div style={{ display: "grid", gap: 9, marginTop: 18 }}>{nav.slice(1).map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div></div>
         <div><div className="mono muted">Elsewhere</div><div style={{ display: "grid", gap: 9, marginTop: 18 }}><a href={portfolio.social.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={13}/></a><a href={portfolio.social.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={13}/></a></div></div>
       </div>
-      <div className="footer-bottom mono"><span>© {new Date().getFullYear()} Manish Kumar</span><span>Kolkata, India · Designed &amp; engineered with intent</span></div>
+      <div className="footer-bottom mono"><span>© {new Date().getFullYear()} Manish Kumar</span><span>India · Designed &amp; engineered with intent</span></div>
     </div>
   </footer>;
 }

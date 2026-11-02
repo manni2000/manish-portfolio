@@ -13,7 +13,7 @@ export function StaticIdentityBadge() {
     <div className="identity-card">
       <div className="card-top"><span className="mono">Engineering access</span><span className="status-dot" /></div>
       <div className="card-name"><strong>{portfolio.personal.name}</strong><div className="card-role"><span>Full Stack Developer</span><span>AI Application Engineer</span></div></div>
-      <div className="card-bottom"><span className="card-details"><span>{portfolio.personal.institution}</span><span>{portfolio.personal.shortLocation}</span><b>Available for opportunities</b></span><Image className="card-qr" src="/qrcode.png" width={84} height={84} alt="QR code for Manish Kumar's portfolio" priority unoptimized /></div>
+      <div className="card-bottom"><span className="card-details"><span>{portfolio.personal.institution}</span><span>{portfolio.personal.shortLocation}</span></span><Image className="card-qr" src="/qrcode.png" width={84} height={84} alt="QR code for Manish Kumar's portfolio" priority unoptimized /></div>
     </div>
   </div>;
 }
